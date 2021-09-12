@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jackett Search</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css"/>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.7/sorting/file-size.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+
+$(document).ready(function() {
+  $('#searchOutput').DataTable();
+  $('.searchOptions').select2();
+});
+    </script>
+    <style>
+        .mainTable{
+
+        }
+    </style>
+</head>
+<body>
+    <img src="static/jackett_medium.png">
+    <div class="formContainer d-inline-flex p-2">
+    <form method="post" action="{{url_for('searchform')}}">
+        {{form.searchTerm}}
+        {{form.categoryList(class="searchOptions")}}
+        {{form.indexerList(class="searchOptions")}}
+        <input type=submit value="Search">
+    </form>
+    </div>
+        <div class="indexerStatus">
+            {{indexerstatus}}
+        </div>
+        <div class="mainTable d-flex p-2">
+        {% block content %}
+            {{ results|safe }}
+        {% endblock %}
+        </div>
+</body>
+</html>
