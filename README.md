@@ -1,4 +1,4 @@
-Jakett Manual Search Flask
+##Jakett Manual Search Flask
 This is a Python Flask based program for searching stuff using Jackett Manual Search API.One of the problems with sudozid/jackett-metasearch is that its just a frontend mod for Jackett. So everything is accessible, someone can change Jackett settings very easily. There is zero security. 
 
 What I wanted to do was to make it so that API Key and other stuff is not accessible to end users. 
