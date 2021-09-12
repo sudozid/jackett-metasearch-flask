@@ -25,3 +25,5 @@ Here is how the UI Looks like ik its kinda ugly, I haven't done the CSS.
 ![jfjsd](https://user-images.githubusercontent.com/67092879/132982665-84297341-4631-42f8-a91c-0b159a3ef938.PNG)
 
 I don't know if I will work on this project further as NZBHydra2 has an amazing UI with Administrator login and direct Jackett integration for manual search. Anyways, feel free to modify whatever you want.
+
+WARNING: The Magnet Link is a link to Jackett and shows your API Key and stuff!
